@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+:root{
+    --color-purple: #7159c1;
+    --color-orange: #ffbb00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-purple);
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Estilização dos links do menu */
+
+.links {
+    font-size: 22px;
+    line-height: 32px;
+}
+
+.links a + a {
+    margin-left: 32px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #777;
+    position: relative;
+}
+
+.links a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-purple);
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    transition: width 200ms;
+}
+
+.links a:hover::after {
+    width: 100%;
+    transition: width 500ms cubic-bezier(1, 0.05, 0.47, 0.59);
+}
+
+.links a.active {
+    font-weight: bold;
+    color: var(--color-purple);
+
+}
+
+/* CARDS */
+
+.card{
+    /*estilo*/
+    background-color: white;
+    max-width: 800px;
+    min-height: 400px;
+
+    /*espacamento ao centro*/
+    margin: 45px auto;
+
+    /*grid 2fractions*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    /*sombra*/
+    box-shadow: 6px 6px 5px -2px rgba(0, 0, 0, 0.2);
+
+    /*animação*/
+    opacity: 0;
+    animation-delay: 500ms;
+    animation-name: surgir;
+    animation-duration: 2000ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes surgir {
+    0% {
+
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Details */
+
+.details {
+    padding: 36px;
+}
+
+.details .item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 16px 0;
+}
+
+.details .item:last-child {
+    border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+    font-size: 12px;
+    line-height: 24px;
+    color: #aaa;
+    letter-spacing: 0.7px;
+    font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+    font-weight: bold;
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--color-purple);
+}
+
+.details span {
+    padding: 8px 16px;
+    background-color: var(--color-orange);
+    border-radius: 16px;
+    color: #777;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+/*FORM*/
+
+form input {
+    width: 100%;
+    outline: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+form input[type="radio"] {
+    width: initial;
+    margin-right: 4px;
+}
+
+form input::placeholder {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+button[type="submit"], a.button {
+    padding: 8px 32px;
+    margin-top: 32px;
+    border-radius: 8px;
+    background-color: var(--color-orange);
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+a.button {
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+
+/* INDEX INSTRUCTORS */
+
+.table-container {
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.table-container table {
+    border-spacing: 0;
+}
+
+.table-container thead tr th {
+    text-align: left;
+}
+
+tbody td, tr, th {
+    padding: 16px;
+    border-bottom: 0.1px solid #999;
+}
+
+tr:last-child td {
+    border: none;
+}
+
+th {
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #333;
+    font-size: 14px;
+}
+
+
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid white;
+}
+
+tbody tr td a, .button__new {
+    background-color: var(--color-orange);
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 400ms;
+}
+
+tbody tr td a:hover {
+    background-color: orangered;
+    box-shadow: 3px 5px 8px 2px #777;
+    transition: 400ms;
+}
+
+.button__new {
+    margin-bottom: 16px;
+    display: block;
+    box-shadow: none;
+    position: relative;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.button__new:hover {
+    background-color: var(--color-purple);
+}

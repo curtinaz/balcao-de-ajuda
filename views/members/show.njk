@@ -1,0 +1,56 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card">
+        <section class="avatar" style="width: 100%; min-height: 400px; background: url('{{ member.avatar_url }}') no-repeat center center / cover"></section>
+
+        <section class="details">
+
+            <h3>Detalhes</h3>
+
+            <div class="item">
+                <div>Membro</div>
+                <div>{{ member.name }}</div>
+            </div>
+
+            <div class="item">
+                <div>E-mail</div>
+                <div>{{ member.email }}</div>
+            </div>
+
+            <div class="item">
+                <div>Idade</div>
+                <div>{{ member.age }}</div>
+            </div>
+
+            <div class="item">
+                <div>Tipo sanguineo</div>
+                <div>
+                {% if member.blood == "A1"%}A+{% endif %}
+                {% if member.blood == "A0"%}A-{% endif %}
+                {% if member.blood == "B1"%}B+{% endif %}
+                {% if member.blood == "B0"%}B-{% endif %}
+                {% if member.blood == "AB1"%}AB+{% endif %}
+                {% if member.blood == "AB0"%}AB-{% endif %}
+                {% if member.blood == "O1"%}O+{% endif %}
+                {% if member.blood == "O0"%}O-{% endif %}
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Peso</div>
+                <div>{{ member.weight }} Kg</div>
+            </div>
+
+            <div class="item">
+                <div>Altura</div>
+                <div>{{ member.height }}</div>
+            </div>
+
+            <a href="{{ member.id }}/edit/" class="button">Editar</a>
+        </section>
+
+    </div>
+
+{% endblock content %}
