@@ -18,7 +18,7 @@ exports.show = function (req, res) {
         return id == instructor.id
     })
 
-    if (!foundInstructor) return res.send ("Instructor not found!")
+    if (!foundInstructor) return res.send ("Pedido não encontrado")
 
     const instructor = {
         ...foundInstructor,
