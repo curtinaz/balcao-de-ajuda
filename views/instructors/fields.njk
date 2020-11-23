@@ -1,49 +1,22 @@
 <div class="item">
-                <div>
-                    <div>Avatar URL</div>
-                    <input 
-                    type="url" 
-                    name="avatar_url" 
-                    placeholder="http://"
-                    value="{{ instructor.avatar_url }}"
-                    >
-            </div>
 
             <div class="item">
                 <div>
-                    <div>Instrutor</div>
+                    <div>Empresa</div>
                     <input 
                     type="text"
                     name="name"
-                    placeholder="Nome do instrutor"
+                    placeholder="Nome da Empresa"
                     value="{{ instructor.name }}"
                     >
             </div>
 
             <div class="item">
-                <div>Data de nascimento</div>
-                <input type="date" 
-                name="birth"
-                value="{{ instructor.birth }}" 
+                <div>Descrição do Pedido</div>
+                <input style="height: 30%" type="text" 
+                name="descricao"
+                value="{{ instructor.descricao }}" 
                 >
-            </div>
-
-            <div class="item">
-                <div>Sexo</div>
-                <span><input 
-                        type="radio" 
-                        name="gender" 
-                        value="M"
-                        {% if instructor.gender == "M" %}
-                        checked
-                        {% endif %}>Masculino</span>
-                <span><input 
-                        type="radio" 
-                        name="gender" 
-                        value="F"
-                        {% if instructor.gender == "F" %}
-                        checked
-                        {% endif %}>Feminino</span>
             </div>
 
             <div class="item">

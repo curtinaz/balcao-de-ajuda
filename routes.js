@@ -10,6 +10,7 @@ routes.get('/', function (req, res) {
 // ROTAS DOS INSTRUCTORS
 
 routes.get('/instructors', instructors.index)
+routes.get('/admin', instructors.admin)
 routes.get('/instructors/create', instructors.create)
 routes.post("/instructors", instructors.post)
 routes.get('/instructors/:id', instructors.show)

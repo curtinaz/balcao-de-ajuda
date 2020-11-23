@@ -6,6 +6,10 @@ exports.index = function (req, res) {
     return res.render("instructors/index", { instructors: data.instructors })
 }
 
+exports.admin = function (req, res) {
+    return res.render("instructors/admin", { instructors: data.instructors })
+}
+
 exports.create = function (req, res) {
     return res.render("instructors/create")
 }
@@ -40,7 +44,7 @@ exports.post = function (req, res) {
         }
     }
     
-    let { avatar_url, name, birth, gender, services } = req.body
+    let { descricao, name, birth, prio, services } = req.body
 
     birth = Date.parse(req.body.birth)
     const created_at = Date.now()
@@ -48,9 +52,9 @@ exports.post = function (req, res) {
 
     data.instructors.push({
         id,
-        avatar_url,
+        descricao,
         name,
-        gender,
+        prio,
         services,
         birth,
         created_at
